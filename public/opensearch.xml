@@ -1,0 +1,6 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>Diksyonaryong Filipino</ShortName>
+<Description>Alamin ang kahulugan ng mga salita sa wikang Filipino at ang tumpak na ispeling at estilo ng pagsulat ng mga ito.</Description>
+<InputEncoding>UTF-8</InputEncoding>
+<Url type="text/html" method="get" template="https://updf.now.sh/hanapin/{searchTerms}"/>
+</OpenSearchDescription>

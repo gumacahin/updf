@@ -1,0 +1,266 @@
+html,
+body {
+  color: #303336;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+
+a, a:active, a:visited {
+  text-decoration: underline;
+  color: #265667;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.scroll-to-top {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  color:#66303C;
+  font-size: 3em;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 600ms, visibility 600ms;
+}
+
+.scroll-to-top:active, .scroll-to-top:focus {
+  color:#66303C;
+}
+
+.scroll-to-top.scroll-to-top--hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 600ms, visibility 600ms;
+}
+
+.page-header,
+.page-footer {
+  flex-shrink: 0;
+}
+
+.page-body {
+  flex-grow: 1;
+}
+
+.page-header {
+  height: 30px;
+  background: #66303C;
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.page-header .page-header__title {
+  font-weight: normal;
+  font-size: 1rem;
+  margin: 0.67em;
+}
+
+.page-header .page-header__title-link {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.page-header .page-header__search, .page-header .page-header__help {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  padding: 14px;
+  color: #ffffff;
+} 
+
+.page-header .page-header__help--active,
+.page-header .page-header__search--active {
+  padding-bottom: 9px;
+  border-bottom: 5px solid #66633A;
+}
+
+.page-header__help:hover, .page-header__search:hover {
+  color: #66633A;
+}
+
+.page-header__icons {
+  display: flex;
+  font-size: 22px;
+}
+
+.page-body {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-footer {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation-list {
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.navigation-list .navigation-list__item {
+  display: inline;
+}
+
+.navigation-list .navigation-list__item:not(:first-child)::before {
+  content: ' | ';
+  font-weight: 400;
+}
+
+.navigation-list__item .navigation-list__link {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.search-form {
+  margin: 0 auto;
+}
+
+.search-query {
+  margin: 20px 0 40px;
+}
+
+.react-autosuggest__container {
+  position: relative;
+  margin: 0 auto;
+}
+
+.react-autosuggest__suggestions-container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.react-autosuggest__input {
+  width: 240px;
+  height: 30px;
+  padding: 10px 20px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+
+.react-autosuggest__input--focused {
+  outline: none;
+  border-color: #66633A;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  position: absolute;
+  top: 51px;
+  width: 280px;
+  border: 1px solid #66633A;
+  background-color: #fff;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  z-index: 2;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #ddd;
+}
+
+.main-navigation {
+  font-size: 1.75rem;
+  margin: 20px 0 40px;
+}
+
+.word-list {
+  width: 600px;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+@media (max-width: 640px) {
+  .word-list {
+    width: auto;
+    margin: 0;
+  }
+}
+
+.word {
+  margin-bottom: 3rem;
+}
+
+.word h4 {
+  margin: 10px 0;
+}
+
+.word h4 .pronunciation {
+  font-weight: bold;
+}
+
+.word h4 .alternate-pronunciation {
+  font-weight: normal;
+}
+
+.sense {
+  display: flex;
+}
+
+.sense-counter {
+  margin-right: 0.5rem;
+  line-height: 1.4;
+}
+
+.sense-counter, .subsense-counter {
+  margin-right: 0.3rem;
+}
+
+.word .definition-text {
+  line-height: 1.4;
+}
+
+.daglat-list {
+  padding: 0;
+  margin: 0;
+}
+
+.daglat-list .daglat-item {
+  line-height: 1.5;
+}
