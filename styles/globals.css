@@ -19,6 +19,9 @@ a, a:active, a:visited {
 }
 
 .scroll-to-top {
+  display: block;
+  width: 55px;
+  height: 55px;
   position: fixed;
   right: 5%;
   bottom: 5%;
