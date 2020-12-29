@@ -8,6 +8,7 @@ import  useSWR  from 'swr';
 import  Head  from 'next/head';
 import { letters } from '../../constants';
 import debounce from 'lodash.debounce';
+import { list } from '../api/list';
 
 
 function EntryWord({entry}) {
@@ -22,7 +23,7 @@ function EntryWord({entry}) {
 function Page({ letter, index, setPageEnd }) {
 
   const { data , error } = useSWR(
-    `http://localhost:3000/api/list?letter=${letter}&page=${index}`, fetcher
+    `/api/list?letter=${letter}&page=${index}`, fetcher
   );
 
   if (error) return <div className="error">Naku! May error.</div>
@@ -93,13 +94,8 @@ export function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const titik = params.titik;
-  const urlStart = process.env.NODE_ENV === 'development'
-    ? "http://localhost:3000"
-    : "https://" + process.env.VERCEL_URL
-  const {
-     data
-  } = await fetch(`${urlStart}/api/list?letter=${titik}`)
-  .then(res => res.json());
+  const data = JSON.parse(JSON.stringify(await list(titik, 1, 50)));
+  
 
   return {
     props: { data },
